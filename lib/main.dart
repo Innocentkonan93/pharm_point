@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pharm_point/models/pharms_list.dart';
 import 'package:pharm_point/screens/Pharm/map_screen.dart';
 import 'package:pharm_point/screens/Pharm/pharm_details_screen.dart';
 import 'package:pharm_point/screens/Pharm/pharm_screen.dart';
-import 'package:pharm_point/screens/Pharm/villes_screen.dart';
-import 'package:pharm_point/screens/centreSante/sante_screen.dart';
-import 'package:pharm_point/screens/clinics/clinic_screen.dart';
-import 'package:pharm_point/screens/login/login_screen.dart';
-import 'package:pharm_point/widgets/pref.dart';
+import 'package:pharm_point/widgets/menu_item.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,13 +23,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => LoginScreen(),
-        VilleScreen.routeName: (ctx) => VilleScreen(),
-        PharmScreen.routeName: (ctx) => PharmScreen(),
+        '/': (ctx) => MenuItem(),
+        PharmsList.routeName: (ctx) => PharmsList(),
         PharmDetailsScreen.routeName: (ctx) => PharmDetailsScreen(),
-        ClinicScreen.nameRoute: (ctx) => ClinicScreen(),
         MapScreen.nameRoute: (ctx) => MapScreen(),
-        SanteScreen.nameRoute: (ctx) => SanteScreen(),
       },
     );
   }

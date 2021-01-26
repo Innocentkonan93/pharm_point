@@ -28,7 +28,7 @@ class AllVilles {
 
 class AllPharms {
   static const String url =
-      'http://192.168.64.2/Projects/pharma_/getPharm2.php';
+      'http://bad-event.com/pharma/getAllPharm.php';
 
   static Future<List<Pharms>> getPharms() async {
     try {

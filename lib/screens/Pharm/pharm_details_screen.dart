@@ -39,7 +39,7 @@ class PharmDetailsScreen extends StatelessWidget {
             expandedHeight: 250,
             elevation: 2,
             flexibleSpace: FlexibleSpaceBar(
-                // background: Image.network(
+                // background: pharmImg == '' ? null : Image.network(
                 //   pharmImg,
                 //   fit: BoxFit.cover,
                 // ),
@@ -185,10 +185,14 @@ class PharmDetailsScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            pharmResp,
-                            style: GoogleFonts.montserrat(
-                              textStyle: TextStyle(fontSize: 18),
+                          FittedBox(
+                            child: Expanded(
+                                                          child: Text(
+                                pharmResp,
+                                style: GoogleFonts.montserrat(
+                                  textStyle: TextStyle(fontSize: 18),
+                                ),
+                              ),
                             ),
                           ),
                         ],
