@@ -1,6 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:pharm_point/models/villes_list.dart';
+import 'package:pharm_point/controllers/pharm_provider.dart';
+import 'package:pharm_point/controllers/ville_provider.dart';
+import 'package:pharm_point/screens/home_screen.dart';
+import 'package:pharm_point/screens/ville_screen.dart';
+import 'package:pharm_point/services/api_helpers.dart';
+import 'package:provider/provider.dart';
 
 class MenuItem extends StatefulWidget {
   @override
@@ -8,6 +13,30 @@ class MenuItem extends StatefulWidget {
 }
 
 class _MenuItemState extends State<MenuItem> {
+  getVilles() async {
+    var provider = Provider.of<VilleProvider>(context, listen: false);
+    var resp = await AllVilles.getAllVilles();
+    if (resp.isSuccesful) {
+      provider.setVilleList(resp.data);
+    }
+  }
+
+  getPharms() async {
+    var provider = Provider.of<PharmsProvider>(context, listen: false);
+    var resp = await AllPhams.getAllPharms();
+    if (resp.isSuccesful) {
+      provider.setPharmsList(resp.data);
+      print('cool');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getVilles();
+    getPharms();
+  }
+
   double top = 0;
   double left = 0;
   @override
@@ -30,11 +59,12 @@ class _MenuItemState extends State<MenuItem> {
               0.6,
               Colors.orangeAccent,
               () {
+                getVilles();
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => VilleList(),
+                    builder: (context) => HomeScreen(),
                   ),
                 );
               },

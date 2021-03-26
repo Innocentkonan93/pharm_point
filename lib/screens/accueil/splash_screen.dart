@@ -1,6 +1,6 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
+import '../home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -10,54 +10,23 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    var d = Duration(seconds: 2);
-    Future.delayed(d, () {
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) {
-          return null;
-        }),
-        (route) => false,
-      );
-    });
+   Future.delayed(Duration(seconds: 3), (){
+     Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+   });
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            child: Center(
-              child: SlideInDown(
-                child: Container(
-                  padding: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    color: Color.fromRGBO(255, 255, 255, 0.1),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  height: 185,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(255, 255, 255, 0.8),
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: Image.asset('assets/images/icon.png'),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          CircularProgressIndicator(
-            backgroundColor: Colors.white,
-          ),
-        ],
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/Fond.png'),
+            fit: BoxFit.fitWidth
+          )
+        ),
       ),
     );
   }
