@@ -1,0 +1,20 @@
+[31-Mar-2021 06:46:49 UTC] PHP Notice:  Undefined variable: conn in /opt/cpanel-disk-a/badevent/public_html/pharma/getVille.php on line 7
+[31-Mar-2021 06:46:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /opt/cpanel-disk-a/badevent/public_html/pharma/getVille.php:7
+Stack trace:
+#0 {main}
+  thrown in /opt/cpanel-disk-a/badevent/public_html/pharma/getVille.php on line 7
+[31-Mar-2021 06:46:59 UTC] PHP Notice:  Undefined variable: conn in /opt/cpanel-disk-a/badevent/public_html/pharma/getAllPharm.php on line 7
+[31-Mar-2021 06:46:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /opt/cpanel-disk-a/badevent/public_html/pharma/getAllPharm.php:7
+Stack trace:
+#0 {main}
+  thrown in /opt/cpanel-disk-a/badevent/public_html/pharma/getAllPharm.php on line 7
+[31-Mar-2021 06:47:09 UTC] PHP Notice:  Undefined variable: conn in /opt/cpanel-disk-a/badevent/public_html/pharma/form.php on line 145
+[31-Mar-2021 06:47:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /opt/cpanel-disk-a/badevent/public_html/pharma/form.php:145
+Stack trace:
+#0 {main}
+  thrown in /opt/cpanel-disk-a/badevent/public_html/pharma/form.php on line 145
+[01-Apr-2021 12:14:51 UTC] PHP Notice:  Undefined variable: conn in /opt/cpanel-disk-a/badevent/public_html/pharma/getAllPharm.php on line 7
+[01-Apr-2021 12:14:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /opt/cpanel-disk-a/badevent/public_html/pharma/getAllPharm.php:7
+Stack trace:
+#0 {main}
+  thrown in /opt/cpanel-disk-a/badevent/public_html/pharma/getAllPharm.php on line 7
